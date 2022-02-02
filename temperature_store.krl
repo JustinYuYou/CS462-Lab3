@@ -1,0 +1,3 @@
+ruleset temperature_store {
+   
+}
