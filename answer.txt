@@ -6,6 +6,7 @@ temperatures works like a GET where it returns a list of temperatures
 I am iterating through the collected temperature list and use a index function to filter out the one not in the violated temperature map
 
 3. What happens if provides doesn't list the name of the temperatures function?
-
+Then we will not able to have those functions acceessible to other ruleset when using it as a module.
 
 4. What happens if shares doesn't list the name of the temperatures function?
+Then we will not able to call those function outside the ruleset

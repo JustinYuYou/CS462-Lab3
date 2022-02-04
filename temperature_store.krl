@@ -30,9 +30,9 @@ ruleset temperature_store {
    
    rule collect_temperatures {
       select when wovyn new_temperature_reading
-
+      send_directive("hi")
       always {
-         ent:temperatures := ent:temperatures.append({"temperature": event:attrs{"temperature"}, "timestamp": event:attrs{"temperature"}})
+         ent:temperatures := ent:temperatures.append({"temperature": event:attrs{"temperature"}, "timestamp": event:attrs{"timestamp"}})
       }
    }
 
@@ -40,7 +40,7 @@ ruleset temperature_store {
       select when wovyn threshold_violation
 
       always {
-         ent:temperaturesViolated := ent:temperaturesViolated.append({"temperature": event:attrs{"temperature"}, "timestamp": event:attrs{"temperature"}})
+         ent:temperaturesViolated := ent:temperaturesViolated.append({"temperature": event:attrs{"temperature"}, "timestamp": event:attrs{"timestamp"}})
       }
    }
 
