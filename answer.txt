@@ -1,0 +1,11 @@
+1. Explain how the collect_temperatures rule and the temperatures function work as an event-query API.
+collect_temperatures works like a POST where it append the temperatures into the list
+temperatures works like a GET where it returns a list of temperatures
+
+2. Explain your strategy for finding temperatures that are in range.
+I am iterating through the collected temperature list and use a index function to filter out the one not in the violated temperature map
+
+3. What happens if provides doesn't list the name of the temperatures function?
+
+
+4. What happens if shares doesn't list the name of the temperatures function?
