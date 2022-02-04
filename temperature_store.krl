@@ -15,19 +15,18 @@ ruleset temperature_store {
 
       inrange_temperatures = function() {
          ent:temperatures.filter(function(temp){
-            temperaturesViolated.index(temp) == -1
+            ent:temperaturesViolated.index(temp) == -1
          })
       }
    }
 
-   rule init {
-      select when wrangler ruleset_added where rids >< meta:rid
-
-      always {
+   rule intialization {
+      select when wrangler ruleset_installed where event:attr("rids") >< meta:rid
+      fired {
          ent:temperatures := []
-         ent:temperaturesViolated := []
-      }
-   }
+         ent:temperaturesViolated := []      }
+    }
+
    
    rule collect_temperatures {
       select when wovyn new_temperature_reading
